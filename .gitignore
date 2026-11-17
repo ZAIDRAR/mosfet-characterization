@@ -1,0 +1,11 @@
+# Simulator generated data; preserve reviewed exports and plots explicitly
+*.raw
+*.log
+*.net
+*.op.raw
+*.op.log
+*.bak
+*~
+__pycache__/
+.venv/
+.DS_Store

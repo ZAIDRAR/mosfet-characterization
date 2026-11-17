@@ -1,0 +1,14 @@
+* Educational NMOS output characteristics - not a calibrated device
+* Run with ngspice: ngspice nmos-output-educational.cir
+* VDS drain sweep: 0..5V; VGS gate step: 1..4V
+* Positive drain current is approximately -I(VDS)
+VDS drain 0 DC 0
+VGS gate 0 DC 0
+M1 drain gate 0 0 NMOS_EDU W=10u L=1u
+.model NMOS_EDU NMOS (LEVEL=1 VTO=1 KP=100u LAMBDA=0.02)
+.dc VDS 0 5 0.1 VGS 1 4 1
+.control
+run
+plot -i(vds)
+.endc
+.end
